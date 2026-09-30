@@ -50,8 +50,16 @@ def run_scraper(progress_callback=None):
 
     # Detect current files in hot tier
     current_files = [f for f in os.listdir(movie_dir) if f.endswith(valid_exts)]
+    current_files_set = set(current_files)
     total_files = len(current_files)
     processed_count = 0
+
+    # Prune files that were deleted from the folder
+    pruned = [fname for fname in list(catalog_map.keys()) if fname not in current_files_set]
+    if pruned:
+        for fname in pruned:
+            print(f"[-] Removed deleted file from catalog: {fname}")
+            del catalog_map[fname]
 
     print(f"[*] Starting incremental scan. {total_files} candidate file(s) found in {movie_dir}.")
 
