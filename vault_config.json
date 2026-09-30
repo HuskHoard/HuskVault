@@ -1,0 +1,6 @@
+{
+    "tmdb_api_key": "YOUR_KEY",
+    "movie_dir": "/home/YOUR_USERNAME/huskhoard/hot_tier",
+    "poster_dir": "./posters",
+    "husk_daemon_url": "http://127.0.0.1:8080"
+}
