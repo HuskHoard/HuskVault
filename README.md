@@ -97,7 +97,7 @@ HuskVault displays live badges based on volume telemetry:
 | 🔴 | **OFFLINE** | Cold Shelf (BD-R / M-DISC / Tape) | Prompts: *"Please insert Binder A · Disc #12"*. |
 
 ### Fixing Ambiguous Titles ("Fix Match")
-Hover over any card in the grid, click **Fix Match**, and search TMDb by title or enter a numeric TMDb ID. The poster and metadata update immediately while preserving all physical storage locations.
+Hover over any card in the grid, click **Circle in upper left*, and search TMDb by title or enter a numeric TMDb ID. The poster and metadata update immediately while preserving all physical storage locations.
 
 ---
 
