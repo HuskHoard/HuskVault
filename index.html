@@ -105,23 +105,40 @@
         .pulse { animation: pulse 1.5s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
 
-        /* Card overlay buttons */
-        .card-actions {
-            display: flex;
-            justify-content: center;
-            gap: 6px;
-            margin-top: 8px;
-            pointer-events: auto;
-        }
-        .btn-mini {
-            font-size: 11px;
-            padding: 4px 8px;
-            border-radius: 4px;
-            background: #27272a;
+        /* Plex-style Pencil Edit Button */
+        .btn-pencil {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(18, 18, 20, 0.85);
             border: 1px solid var(--border);
-            color: #d4d4d8;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            z-index: 4;
+            backdrop-filter: blur(4px);
         }
-        .btn-mini:hover { background: #3f3f46; color: #fff; }
+        .card:hover .btn-pencil {
+            opacity: 1;
+        }
+        .btn-pencil:hover {
+            background: #2563eb;
+            border-color: #3b82f6;
+            color: #fff;
+            transform: scale(1.1);
+        }
+        .btn-pencil svg {
+            width: 14px;
+            height: 14px;
+            pointer-events: none;
+        }
 
         /* Fix match search results */
         .search-results {
@@ -299,14 +316,16 @@
                     card.className = `card ${!isAvailable ? 'offline' : ''}`;
                     
                     card.innerHTML = `
+                        <button class="btn-pencil" title="Fix Match / Edit Info" onclick="openFixMatch(event, '${encodeURIComponent(movie.original_file)}', '${encodeURIComponent(movie.title)}')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                            </svg>
+                        </button>
                         <img src="${movie.poster}" class="poster" alt="${movie.title}" onerror="this.src='posters/placeholder.jpg'">
                         <div class="status-dot ${statusClass}"></div>
                         <div class="info-overlay ${statusClass}">
                             <span style="color:#aaa; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">Location</span><br>
                             <b style="font-size: 13px;">${locationLabel}</b>
-                            <div class="card-actions">
-                                <button class="btn-mini" onclick="openFixMatch(event, '${encodeURIComponent(movie.original_file)}', '${encodeURIComponent(movie.title)}')">Fix Match</button>
-                            </div>
                         </div>
                     `;
 
