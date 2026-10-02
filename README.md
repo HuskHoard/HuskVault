@@ -26,7 +26,7 @@
 **[HuskVault](https://vault.huskhoard.com)** is a lightweight cinema frontend and metadata orchestrator designed specifically for cold-tier media archives. It connects directly with the [HuskHoard](https://github.com/HuskHoard/HuskHoard) kernel daemon to bring streaming-service aesthetics to physical storage media.
 
 - **Permanent Metadata:** Movie posters, synopses, and file records remain cached on your fast NVMe drive—even when the underlying payload is shelved on cold media.
-- **Zero Standby Power:** Archive drives, optical disc binders (BD-R/M-DISC), and LTO tapes draw 0W while idle on your shelf.
+- **Zero Standby Power:** Archive drives, optical disc binders (BD-R/M-DISC)(still testing this), and LTO tapes draw 0W while idle on your shelf.
 - **Physical Volume Prompts:** Clicking an unmounted movie shows you the exact binder slot, disc number, or volume UUID to insert.
 - **StreamGate Direct Play:** Once mounted, media streams directly from the raw block device via HTTP 206 Byte-Range requests without unpacking or extracting gigabytes to SSD.
 - **Built-in "Fix Match":** Override ambiguous titles with an interactive TMDb search directly inside the UI while preserving all physical shelf locations.
