@@ -23,7 +23,7 @@
 
 ## 💡 Overview
 
-**[HuskVault](https://vault.huskhoard.com)** is a lightweight cinema frontend and metadata orchestrator designed specifically for cold-tier media archives. It connects directly with the [HuskHoard](https://github.com/HuskHoard/HuskHoard) kernel daemon to bring streaming-service aesthetics to physical storage media. Here is a [video](https://youtu.be/wakjz_Bnec) demo.
+**[HuskVault](https://vault.huskhoard.com)** is a lightweight cinema frontend and metadata orchestrator designed specifically for cold-tier media archives. It connects directly with the [HuskHoard](https://github.com/HuskHoard/HuskHoard) kernel daemon to bring streaming-service aesthetics to physical storage media. Here is a [video](https://youtu.be/wakjz_Bnec4) demo.
 
 - **Permanent Metadata:** Movie posters, synopses, and file records remain cached on your fast NVMe drive—even when the underlying payload is shelved on cold media.
 - **Zero Standby Power:** Archive drives, optical disc binders (BD-R/M-DISC)(still testing this), and LTO tapes draw 0W while idle on your shelf.
